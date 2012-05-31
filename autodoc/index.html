@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>clj-rsyntax.core - clj-rsyntax API documentation</title>
+    <title>clj-rsyntax.rtextarea - clj-rsyntax API documentation</title>
     <link href="static/favicon.png" rel="icon" />
     <link href="static/favicon.png" rel="shortcut icon" />
     <link media="all" type="text/css" href="static/clojure.css" rel="stylesheet" />
@@ -47,22 +47,188 @@ namespace.
   <div style="margin-left: 1em;" class="toc-section">
     <a href="#toc0">Overview</a>
     <div style="margin-left: 1em;" class="toc-entry">
-      <a href="#clj-rsyntax.core/add-line-highlight!">add-line-highlight!</a>
+      <a href="#clj-rsyntax.rtextarea/action">action</a>
     </div><div style="margin-left: 1em;" class="toc-entry">
-      <a href="#clj-rsyntax.core/begin-atomic-edit!">begin-atomic-edit!</a>
+      <a href="#clj-rsyntax.rtextarea/action-properties!">action-properties!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/add-line-highlight!">add-line-highlight!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background">background</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background!">background!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background-image">background-image</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background-image!">background-image!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background-object">background-object</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/background-object!">background-object!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/begin-atomic-edit!">begin-atomic-edit!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/begin-recording-macro!">begin-recording-macro!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/caret!">caret!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/caret-line-number">caret-line-number</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/caret-offset-from-line-start">caret-offset-from-line-start</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/caret-style!">caret-style!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/clear-mark-all-highlights!">clear-mark-all-highlights!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/convert-spaces-to-tabs!">convert-spaces-to-tabs!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/convert-tabs-to-spaces!">convert-tabs-to-spaces!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/current-line-high-light-color">current-line-high-light-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/current-line-highlight-color!">current-line-highlight-color!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/current-macro">current-macro</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-caret-color">default-caret-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-current-line-highlight-color">default-current-line-highlight-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-font">default-font</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-foreground">default-foreground</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-margin-line-color">default-margin-line-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-margin-line-position">default-margin-line-position</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-mark-all-highlight-color">default-mark-all-highlight-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/default-tab-size">default-tab-size</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/discard-all-edits!">discard-all-edits!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/document!">document!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/end-atomic-edit!">end-atomic-edit!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/end-recording-macro!">end-recording-macro!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/fade-current-line-highlight!">fade-current-line-highlight!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/fade-current-line-highlight?">fade-current-line-highlight?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/font!">font!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/highlight-current-line!">highlight-current-line!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/highlight-current-line?">highlight-current-line?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/icon-group">icon-group</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/icon-group!">icon-group!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/line-end-offset-of-current-line">line-end-offset-of-current-line</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/line-height">line-height</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/line-start-offset-of-current-line">line-start-offset-of-current-line</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/line-wrap!">line-wrap!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/load-macro!">load-macro!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-color">margin-line-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-color!">margin-line-color!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-enabled!">margin-line-enabled!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-enabled?">margin-line-enabled?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-pixel-location">margin-line-pixel-location</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-position">margin-line-position</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/margin-line-position!">margin-line-position!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/mark-all!">mark-all!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/mark-all-highlight-color">mark-all-highlight-color</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/max-ascent">max-ascent</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/osx?">osx?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/paste!">paste!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/playback-last-macro!">playback-last-macro!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/popup-menu">popup-menu</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/print-rta">print-rta</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/read!">read!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/recording-macro?">recording-macro?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/redo-last-action!">redo-last-action!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/redo?">redo?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/remove-all-line-highlights!">remove-all-line-highlights!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/remove-line-highlight!">remove-line-highlight!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/replace-range">replace-range</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/replace-selection">replace-selection</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/rounded-selection-edges">rounded-selection-edges</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/rounded-selection-edges?">rounded-selection-edges?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/selected-occurrence-text">selected-occurrence-text</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/selected-occurrence-text!">selected-occurrence-text!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tab-size!">tab-size!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tabs-emulated!">tabs-emulated!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tabs-emulated?">tabs-emulated?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/text-mode">text-mode</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/text-mode!">text-mode!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tool-tip-supplier">tool-tip-supplier</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tool-tip-supplier!">tool-tip-supplier!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/tool-tip-text">tool-tip-text</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/ui!">ui!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/undo-last-action!">undo-last-action!</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/undo?">undo?</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/y-for-line">y-for-line</a>
+    </div><div style="margin-left: 1em;" class="toc-entry">
+      <a href="#clj-rsyntax.rtextarea/y-for-line-containing">y-for-line-containing</a>
     </div>
     <br />
   </div>
 </div>
 </div>
-                <div id="content-tag"><h1 id="overview">API for <span id="namespace-name">clj-rsyntax.core</span>
+                <div id="content-tag"><h1 id="overview">API for <span id="namespace-name">clj-rsyntax.rtextarea</span>
   - <span id="header-project">clj-rsyntax</span> <span id="header-version"></span>
   </h1>
 <span id="author-line">by <span id="author-name">Jon Rose</span><br /></span>
-<br />Full namespace name: <span id="long-name">clj-rsyntax.core</span>
+<br />Full namespace name: <span id="long-name">clj-rsyntax.rtextarea</span>
 <p></p>
 <h2>Overview</h2>
-<pre id="namespace-docstr">Wrapper API for org.fife.ui.rtextarea.RTextArea (<a href="http://fifesoft.com/">http://fifesoft.com/</a>) the
+<pre id="namespace-docstr">Wrapper API for org.fife.ui.org.fife.ui.rtextarea.RTextArea.org.fife.ui.rtextarea.RTextArea (<a href="http://fifesoft.com/">http://fifesoft.com/</a>) the
 	opensource text editor  component from RText.</pre>
 
 
@@ -71,7 +237,29 @@ namespace.
 <div id="var-entry">
   <br />
   <hr />
-  <h2 id="clj-rsyntax.core/add-line-highlight!">add-line-highlight!</h2>
+  <h2 id="clj-rsyntax.rtextarea/action">action</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (action rta action)
+</pre>
+  <pre id="var-docstr">Provides a way to gain access to the editor actions on the right-click popup menu.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/action-properties!">action-properties!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (action-properties! rta action name mnemonic accelerator)
+</pre>
+  <pre id="var-docstr">Sets the properties of one of the actions this text area owns.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/add-line-highlight!">add-line-highlight!</h2>
   <span id="var-type">function</span><br />
   <pre id="var-usage">Usage: (add-line-highlight! rta line color)
 </pre>
@@ -82,11 +270,902 @@ namespace.
 </div><div id="var-entry">
   <br />
   <hr />
-  <h2 id="clj-rsyntax.core/begin-atomic-edit!">begin-atomic-edit!</h2>
+  <h2 id="clj-rsyntax.rtextarea/background">background</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background rta)
+</pre>
+  <pre id="var-docstr">Returns the java.awt.Color used as the background color for this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/background!">background!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background! rta bg)
+</pre>
+  <pre id="var-docstr">Sets the background color of this text editor.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/background-image">background-image</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background-image rta)
+</pre>
+  <pre id="var-docstr">Returns the image currently used for the background.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/background-image!">background-image!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background-image! rta image)
+</pre>
+  <pre id="var-docstr">Sets this image as the background image.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/background-object">background-object</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background-object rta)
+</pre>
+  <pre id="var-docstr">Returns the Object representing the background for all documents in this tabbed pane; either a java.awt.Color or a java.lang.Image containing the image used as the background for this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/background-object!">background-object!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (background-object! rta newBackground)
+</pre>
+  <pre id="var-docstr">Makes the background into this Object.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/begin-atomic-edit!">begin-atomic-edit!</h2>
   <span id="var-type">function</span><br />
   <pre id="var-usage">Usage: (begin-atomic-edit! rta)
 </pre>
   <pre id="var-docstr">Begins an "atomic edit."</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/begin-recording-macro!">begin-recording-macro!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (begin-recording-macro! rta)
+</pre>
+  <pre id="var-docstr">Begins recording macro</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/caret!">caret!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (caret! rta caret)
+</pre>
+  <pre id="var-docstr">This method is overridden to make sure that instances of org.fife.ui.rtextarea.RTextArea only use ConfigurableCarets.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/caret-line-number">caret-line-number</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (caret-line-number rta)
+</pre>
+  <pre id="var-docstr"> Gets the line number that the caret is on.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/caret-offset-from-line-start">caret-offset-from-line-start</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (caret-offset-from-line-start rta)
+</pre>
+  <pre id="var-docstr">Gets the position from the beginning of the current line that the caret is on.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/caret-style!">caret-style!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (caret-style! rta mode style)
+</pre>
+  <pre id="var-docstr">Sets the style of caret used when in insert or overwrite mode.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/clear-mark-all-highlights!">clear-mark-all-highlights!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (clear-mark-all-highlights! rta)
+</pre>
+  <pre id="var-docstr">Clears any "mark all" highlights, if any.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/convert-spaces-to-tabs!">convert-spaces-to-tabs!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (convert-spaces-to-tabs! rta)
+</pre>
+  <pre id="var-docstr">Converts all instances of a number of spaces equal to a tab size into a tab in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/convert-tabs-to-spaces!">convert-tabs-to-spaces!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (convert-tabs-to-spaces! rta)
+</pre>
+  <pre id="var-docstr">Converts all instances of a tab into a number of spaces equivalent to a tab in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/current-line-high-light-color">current-line-high-light-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (current-line-high-light-color rta)
+</pre>
+  <pre id="var-docstr">Returns the color being used to highlight the current line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/current-line-highlight-color!">current-line-highlight-color!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (current-line-highlight-color! rta color)
+</pre>
+  <pre id="var-docstr">Sets the color to use to highlight the current line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/current-macro">current-macro</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (current-macro rta)
+</pre>
+  <pre id="var-docstr">Returns the macro currently stored in this org.fife.ui.rtextarea.RTextArea.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-caret-color">default-caret-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-caret-color rta)
+</pre>
+  <pre id="var-docstr">Returns the default -caret color.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-current-line-highlight-color">default-current-line-highlight-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-current-line-highlight-color rta)
+</pre>
+  <pre id="var-docstr">Returns the "default" color for highlighting the current line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-font">default-font</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-font rta)
+</pre>
+  <pre id="var-docstr">Returns the default font for text areas.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-foreground">default-foreground</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-foreground rta)
+</pre>
+  <pre id="var-docstr">Returns the default foreground color for text in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-margin-line-color">default-margin-line-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-margin-line-color rta)
+</pre>
+  <pre id="var-docstr">Returns the default color for the margin line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-margin-line-position">default-margin-line-position</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-margin-line-position rta)
+</pre>
+  <pre id="var-docstr">Returns the default margin line position.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-mark-all-highlight-color">default-mark-all-highlight-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-mark-all-highlight-color rta)
+</pre>
+  <pre id="var-docstr">Returns the default color used for "mark all."</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/default-tab-size">default-tab-size</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (default-tab-size rta)
+</pre>
+  <pre id="var-docstr">Returns the default tab size, in spaces.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/discard-all-edits!">discard-all-edits!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (discard-all-edits! rta)
+</pre>
+  <pre id="var-docstr">Removes all undoable edits from this document's undo manager.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/document!">document!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (document! rta document)
+</pre>
+  <pre id="var-docstr">Sets the document used by this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/end-atomic-edit!">end-atomic-edit!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (end-atomic-edit! rta)
+</pre>
+  <pre id="var-docstr">Completes an "atomic" edit.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/end-recording-macro!">end-recording-macro!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (end-recording-macro! rta)
+</pre>
+  <pre id="var-docstr">Ends recording a macro.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/fade-current-line-highlight!">fade-current-line-highlight!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (fade-current-line-highlight! rta fade)
+</pre>
+  <pre id="var-docstr">Sets whether the current line highlight should have a "fade" effect.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/fade-current-line-highlight?">fade-current-line-highlight?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (fade-current-line-highlight? rta)
+</pre>
+  <pre id="var-docstr">Returns whether the current line highlight is faded.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/font!">font!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (font! rta font)
+</pre>
+  <pre id="var-docstr">Sets the font for this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/highlight-current-line!">highlight-current-line!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (highlight-current-line! rta highlight)
+</pre>
+  <pre id="var-docstr">Sets whether or not the current line is highlighted.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/highlight-current-line?">highlight-current-line?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (highlight-current-line? rta)
+</pre>
+  <pre id="var-docstr">Returns whether or not the current line is highlighted.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/icon-group">icon-group</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (icon-group rta)
+</pre>
+  <pre id="var-docstr">Returns the icon group being used for the actions of this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/icon-group!">icon-group!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (icon-group! rta group)
+</pre>
+  <pre id="var-docstr">Sets the path in which to find images to associate with the editor's actions.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/line-end-offset-of-current-line">line-end-offset-of-current-line</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (line-end-offset-of-current-line rta)
+</pre>
+  <pre id="var-docstr">Returns the offset of the last character of the line that the caret is on.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/line-height">line-height</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (line-height rta)
+</pre>
+  <pre id="var-docstr">Returns the height of a line of text in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/line-start-offset-of-current-line">line-start-offset-of-current-line</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (line-start-offset-of-current-line rta)
+</pre>
+  <pre id="var-docstr">Returns the offset of the first character of the line that the caret is on.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/line-wrap!">line-wrap!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (line-wrap! rta wrap)
+</pre>
+  <pre id="var-docstr">Sets whether or not word wrap is enabled.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/load-macro!">load-macro!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (load-macro! rta macro)
+</pre>
+  <pre id="var-docstr">Loads a macro to be used by all org.fife.ui.rtextarea.RTextAreas in the current application.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-color">margin-line-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-color rta)
+</pre>
+  <pre id="var-docstr">Returns the color used to paint the margin line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-color!">margin-line-color!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-color! rta color)
+</pre>
+  <pre id="var-docstr">Sets the color used to paint the margin line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-enabled!">margin-line-enabled!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-enabled! rta enabled)
+</pre>
+  <pre id="var-docstr">Enables or disables the margin line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-enabled?">margin-line-enabled?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-enabled? rta)
+</pre>
+  <pre id="var-docstr">Returns whether or not the margin line is being painted.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-pixel-location">margin-line-pixel-location</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-pixel-location rta)
+</pre>
+  <pre id="var-docstr">Returns the margin line position (in pixels) from the left-hand side of the text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-position">margin-line-position</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-position rta)
+</pre>
+  <pre id="var-docstr">Returns the margin line position (which is the number of 'm' widths in the current font the margin line is over).</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/margin-line-position!">margin-line-position!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (margin-line-position! rta size)
+</pre>
+  <pre id="var-docstr">Sets the number of 'm' widths the margin line is over.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/mark-all!">mark-all!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (mark-all! rta toMark matchCase wholeWord regex)
+</pre>
+  <pre id="var-docstr">Marks all instances of the specified text in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/mark-all-highlight-color">mark-all-highlight-color</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (mark-all-highlight-color rta color)
+</pre>
+  <pre id="var-docstr">Sets the color used for "mark all."</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/max-ascent">max-ascent</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (max-ascent rta)
+</pre>
+  <pre id="var-docstr">Returns the maximum ascent of all fonts used in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/osx?">osx?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (osx? rta)
+</pre>
+  <pre id="var-docstr">Returns whether the OS we're running on is OS X.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/paste!">paste!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (paste! rta)
+</pre>
+  <pre id="var-docstr">Paste</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/playback-last-macro!">playback-last-macro!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (playback-last-macro! rta)
+</pre>
+  <pre id="var-docstr">"Plays back" the last recorded macro in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/popup-menu">popup-menu</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (popup-menu rta popupMenu)
+</pre>
+  <pre id="var-docstr">Sets the popup menu used by this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/print-rta">print-rta</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (print-rta rta g pageFormat pageIndex)
+</pre>
+  <pre id="var-docstr">Method called when it's time to print this badboy (the old-school, AWT way).</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/read!">read!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (read! rta in desc)
+</pre>
+  <pre id="var-docstr">We override this method because the super version gives us an entirely new Document, thus requiring us to re-attach our Undo manager.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/recording-macro?">recording-macro?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (recording-macro? rta)
+</pre>
+  <pre id="var-docstr">Returns whether or not a macro is being recorded.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/redo-last-action!">redo-last-action!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (redo-last-action! rta)
+</pre>
+  <pre id="var-docstr">Attempt to redo the last action.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/redo?">redo?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (redo? rta)
+</pre>
+  <pre id="var-docstr">Tells whether a redo is possible</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/remove-all-line-highlights!">remove-all-line-highlights!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (remove-all-line-highlights! rta)
+</pre>
+  <pre id="var-docstr">Removes all line highlights.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/remove-line-highlight!">remove-line-highlight!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (remove-line-highlight! rta tag)
+</pre>
+  <pre id="var-docstr">Removes a line highlight.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/replace-range">replace-range</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (replace-range rta s start end)
+</pre>
+  <pre id="var-docstr">Replaces text from the indicated start to end position with the new text specified.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/replace-selection">replace-selection</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (replace-selection rta text)
+</pre>
+  <pre id="var-docstr">This method overrides JTextComponent's replaceSelection, so that if textMode is OVERWRITE_MODE, it actually overwrites.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/rounded-selection-edges">rounded-selection-edges</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (rounded-selection-edges rta rounded)
+</pre>
+  <pre id="var-docstr">Sets whether the edges of selections are rounded in this text area. This method fires a property change of type org.fife.ui.rtextarea.RTextAreaBase.ROUNDED_SELECTION_PROPERTY.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/rounded-selection-edges?">rounded-selection-edges?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (rounded-selection-edges? rta)
+</pre>
+  <pre id="var-docstr">Returns whether selection edges are rounded in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/selected-occurrence-text">selected-occurrence-text</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (selected-occurrence-text rta)
+</pre>
+  <pre id="var-docstr">Returns the text last selected and used in a Ctrl+K operation.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/selected-occurrence-text!">selected-occurrence-text!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (selected-occurrence-text! rta text)
+</pre>
+  <pre id="var-docstr">Sets the text last selected/Ctrl+K'd in an org.fife.ui.rtextarea.RTextArea.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tab-size!">tab-size!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tab-size! rta size)
+</pre>
+  <pre id="var-docstr">Workaround, since in JDK1.4 it appears that setTabSize() doesn't work for a JTextArea unless you use the constructor specifying the number of rows and columns.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tabs-emulated!">tabs-emulated!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tabs-emulated! rta are-emulated)
+</pre>
+  <pre id="var-docstr">Changes whether or not tabs should be emulated with spaces (i.e., soft tabs).</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tabs-emulated?">tabs-emulated?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tabs-emulated? rta)
+</pre>
+  <pre id="var-docstr">Returns whether or not tabs are emulated with spaces (i.e., "soft" tabs).</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/text-mode">text-mode</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (text-mode rta)
+</pre>
+  <pre id="var-docstr">Returns the text mode this editor pane is currently in.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/text-mode!">text-mode!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (text-mode! rta mode)
+</pre>
+  <pre id="var-docstr">Sets the text mode for this editor pane.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tool-tip-supplier">tool-tip-supplier</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tool-tip-supplier rta)
+</pre>
+  <pre id="var-docstr">Returns the tool tip supplier.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tool-tip-supplier!">tool-tip-supplier!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tool-tip-supplier! rta supplier)
+</pre>
+  <pre id="var-docstr">Sets the tool tip supplier.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/tool-tip-text">tool-tip-text</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (tool-tip-text rta e)
+</pre>
+  <pre id="var-docstr">Returns the tooltip to display for a mouse event at the given location.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/ui!">ui!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (ui! rta ui)
+</pre>
+  <pre id="var-docstr">Sets the UI used by this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/undo-last-action!">undo-last-action!</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (undo-last-action! rta)
+</pre>
+  <pre id="var-docstr">Attempt to undo an "action" done in this text area.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/undo?">undo?</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (undo? rta)
+</pre>
+  <pre id="var-docstr">Tells whether a undo is possible</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/y-for-line">y-for-line</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (y-for-line rta line)
+</pre>
+  <pre id="var-docstr">Returns the y-coordinate of the specified line.</pre>
+  
+  
+  
+</div><div id="var-entry">
+  <br />
+  <hr />
+  <h2 id="clj-rsyntax.rtextarea/y-for-line-containing">y-for-line-containing</h2>
+  <span id="var-type">function</span><br />
+  <pre id="var-usage">Usage: (y-for-line-containing rta offs)
+</pre>
+  <pre id="var-docstr">Returns the y-coordinate of the line containing an offset.</pre>
   
   
   
